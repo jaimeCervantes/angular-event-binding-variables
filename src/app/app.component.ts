@@ -6,5 +6,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-event-binding-variables';
+  titulo: string = "Ambito de variables para expresiones de estado";
+  resultado: number = 0;
+  gente: Array<any>;
+  
+  constructor() {
+    this.initGente();
+  }
+  
+  initGente (textBoton) {
+    this.gente = [{
+        nombre: 'Jaime',
+        edad: 30,
+      },
+      {
+       nombre: 'Guadalupe' ,
+       edad: 25
+      },
+      {
+        nombre: 'Jacobo',
+        edad: 35
+      },
+      {
+        nombre: 'Ruben',
+        edad: 31
+      }
+    ];
+  }
+  
+  eliminar (nombre, e) {
+    let index = this.gente.findIndex(p => p.nombre === nombre);
+    this.gente.splice(index, 1);
+    alert(e.type);
+  }
 }
