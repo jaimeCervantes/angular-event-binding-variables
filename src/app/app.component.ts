@@ -14,7 +14,7 @@ export class AppComponent {
     this.initGente();
   }
   
-  initGente (textBoton) {
+  initGente () {
     this.gente = [{
         nombre: 'Jaime',
         edad: 30,
